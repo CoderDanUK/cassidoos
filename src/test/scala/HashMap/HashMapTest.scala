@@ -24,4 +24,9 @@ class HashMapTest extends AnyFlatSpec with should.Matchers {
     hashMap.remove(1)
     hashMap.get(1) should be (-1)
   }
+
+  it should "not return a value if the list is empty" in { 
+    val hashMap = new HashMap
+    hashMap.get(1) should be (-1)
+  }
 }
