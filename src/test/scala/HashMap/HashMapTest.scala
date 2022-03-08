@@ -29,4 +29,22 @@ class HashMapTest extends AnyFlatSpec with should.Matchers {
     val hashMap = new HashMap
     hashMap.get(1) should be (-1)
   }
+
+  it should "return the correct value when there are multiple" in {
+    val hashMap = new HashMap
+    hashMap.put(1, 1)
+    hashMap.put(2, 2)
+    hashMap.put(3, 42)
+    hashMap.put(4, 4)
+    hashMap.put(5, 5)
+    hashMap.get(3) should be (42)
+    hashMap.get(6) should be (-1)
+
+    hashMap.remove(3)
+    hashMap.get(1) should be (1)
+    hashMap.get(2) should be (2)
+    hashMap.get(3) should be (-1)
+    hashMap.get(4) should be (4)
+    hashMap.get(5) should be (5)
+  }
 }
