@@ -85,11 +85,10 @@ case class HashMap() {
           else
             tail = None
         }
-        if (foundNode.next.isDefined) {
+        if (foundNode.next.isDefined)
           foundNode.next.get.prev = foundNode.prev
-          if (foundNode.prev.isDefined)
-            foundNode.prev.get.next = foundNode.next
-        }
+        if (foundNode.prev.isDefined)
+          foundNode.prev.get.next = foundNode.next
       }
     }
   }
